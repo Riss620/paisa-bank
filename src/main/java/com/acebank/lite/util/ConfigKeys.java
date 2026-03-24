@@ -2,8 +2,9 @@ package com.acebank.lite.util;
 
 public class ConfigKeys {
 
-    // The filename
+    // The filenames
     public static final String DEV_PROPERTIES = "application-dev.properties";
+    public static final String PROD_PROPERTIES = "application-prod.properties";
 
     // Email Auth Keys
     public static final String MAIL_ADDR = "mail.default.address";
