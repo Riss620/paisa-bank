@@ -13,5 +13,8 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 COPY --from=build /app/target/LaceBank.war /usr/local/tomcat/webapps/ROOT.war
 # Expose the web port
 EXPOSE 8080
+# Activate the production profile so ConfigLoader picks up application-prod.properties
+# and resolves Railway's MySQL environment variables (MYSQL_URL, MYSQLUSER, MYSQLPASSWORD, etc.)
+ENV SPRING_PROFILES_ACTIVE=prod
 # Start Tomcat
 CMD ["catalina.sh", "run"]
